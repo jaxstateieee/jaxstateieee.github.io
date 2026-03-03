@@ -33,6 +33,17 @@ const translations = {
     'cta.heading': 'Ready to power up your future?',
     'cta.button':  'Become a Member Today',
 
+    // Timeline
+    'timeline.title': 'Branch History',
+    'timeline.y2023': '2023',
+    'timeline.d2023': 'Dr. Ghosh initiated the IEEE JSU Student Branch.',
+    'timeline.y2024': '2024',
+    'timeline.d2024': 'Won position as best starting club and Presentation Competition at SoutheastCon 2024.',
+    'timeline.y2025': '2025',
+    'timeline.d2025': 'Won third Position in Software Competition at SoutheastCon 2025.',
+    'timeline.y2026': '2026',
+    'timeline.d2026': 'Preparing for SoutheastCon 2026',
+
     // Gallery
     'gallery.title': 'JSU IEEE Gallery',
 
@@ -125,6 +136,17 @@ const translations = {
     // Index – CTA
     'cta.heading': '¿Listo para impulsar tu futuro?',
     'cta.button':  'Hazte Miembro Hoy',
+
+    // Timeline
+    'timeline.title': 'Historia de la Rama',
+    'timeline.y2023': '2023',
+    'timeline.d2023': 'El Dr. Ghosh inició la Rama Estudiantil IEEE JSU.',
+    'timeline.y2024': '2024',
+    'timeline.d2024': 'Ganó la posición de mejor club nuevo y la Competencia de Presentación en SoutheastCon 2024.',
+    'timeline.y2025': '2025',
+    'timeline.d2025': 'Ganó tercer lugar en la Competencia de Software en SoutheastCon 2025.',
+    'timeline.y2026': '2026',
+    'timeline.d2026': 'Preparándose para SoutheastCon 2026',
 
     // Gallery
     'gallery.title': 'Galería IEEE JSU',

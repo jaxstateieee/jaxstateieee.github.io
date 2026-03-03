@@ -641,6 +641,98 @@ footer a:hover {
 }
 
 /* ────────────────────────────────────────────────
+   Branch History Timeline
+───────────────────────────────────────────────── */
+
+.timeline-section {
+  background: #111;
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.timeline-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+}
+
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--jsu-maroon), var(--jsu-gold), var(--ieee-blue));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dot on the line */
+.timeline-dot {
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--jsu-maroon);
+  border: 3px solid var(--jsu-gold);
+  z-index: 2;
+}
+
+.timeline-year {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--jsu-gold);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content p {
+  color: #b0b0b0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 30px;
+  }
+  .timeline::before {
+    left: 8px;
+  }
+  .timeline-dot {
+    left: -27px;
+    width: 13px;
+    height: 13px;
+  }
+  .timeline-year {
+    font-size: 1.3rem;
+  }
+}
+
+/* ────────────────────────────────────────────────
    Image Gallery / Carousel
 ───────────────────────────────────────────────── */
 
