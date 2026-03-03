@@ -1,6 +1,6 @@
 
 :root {
-  --jsu-maroon:     #75182C;
+  --jsu-maroon:     #c02424;    /* Before --- #751818 */
   --jsu-gold:       #C9A84C;
   --ieee-blue:      #00629B;
   --ieee-blue-dark: #004a75;
@@ -185,19 +185,25 @@ body {
    Hero / Page Header
 ───────────────────────────────────────────────── */
 
+
 .hero,
 .page-header {
+  min-height: 70vh;
+  background: linear-gradient(135deg, #f8f0e9 0%, #ffffff 100%);
+  display: flex;
+  padding-top: 100px;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-.hero-banner,
-.page-header-banner {
-  width: 100%;
-  min-height: 70vh;
+.hero::before,
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: url("/assets/jsu-computer-science-students-win-awards-at-confer_198loHt.webp");
-  background-size: cover;
-  background-position: center;
+  opacity: 0.7;
 }
 
 .hero-content {
@@ -206,8 +212,7 @@ body {
   text-align: center;
   max-width: 960px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg) var(--space-lg);
-  background: var(--bg-primary);
+  padding: var(--space-lg);
 }
 
 .hero h1,
