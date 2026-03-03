@@ -17,7 +17,9 @@
       <span class="gamecock"><img height="45vh" src="assets/logo-nnn.png" alt=""></span>
   </a>
 
-  <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 
   <div class="nav-links">
     <a href="index.html" data-i18n="nav.home">Home</a>
@@ -37,45 +39,45 @@
 
 <section class="page-header">
   <div class="page-header-banner"></div>
-  <div class="hero-content">
+  <div class="hero-content fade-up">
     <h1 data-i18n="members.title">Join IEEE JSU</h1>
     <p class="subtitle" data-i18n="members.subtitle">Be part of the largest technical professional organization in the world — on campus.</p>
   </div>
 </section>
 
-<main style="padding: var(--space-xl) var(--space-lg); max-width:1200px; margin:0 auto;">
+<main class="members-main">
 
-  <section style="margin-bottom: var(--space-xl);">
-    <h2 style="text-align:center; margin-bottom:var(--space-lg);" data-i18n="members.why">Why Join IEEE?</h2>
+  <section class="members-why-section">
+    <h2 class="fade-up" data-i18n="members.why">Why Join IEEE?</h2>
     
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:var(--space-lg);">
-      <div style="background:var(--surface); padding:var(--space-lg); border-radius:var(--radius-lg); text-align:center;">
-        <i class="fas fa-network-wired fa-3x" style="color:var(--jsu-gold); margin-bottom:1rem;"></i>
+    <div class="stagger-parent members-cards-grid">
+      <div class="stagger-child card-hover-lift members-benefit-card">
+        <i class="fas fa-network-wired fa-3x"></i>
         <h3 data-i18n="members.networking">Networking</h3>
         <p data-i18n="members.networkingText">Meet industry professionals, alumni, professors and fellow students.</p>
       </div>
-      <div style="background:var(--surface); padding:var(--space-lg); border-radius:var(--radius-lg); text-align:center;">
-        <i class="fas fa-project-diagram fa-3x" style="color:var(--jsu-gold); margin-bottom:1rem;"></i>
+      <div class="stagger-child card-hover-lift members-benefit-card">
+        <i class="fas fa-project-diagram fa-3x"></i>
         <h3 data-i18n="members.projects">Projects & Competitions</h3>
         <p data-i18n="members.projectsText">Work on real hardware/software projects and compete regionally/nationally.</p>
       </div>
-      <div style="background:var(--surface); padding:var(--space-lg); border-radius:var(--radius-lg); text-align:center;">
-        <i class="fas fa-graduation-cap fa-3x" style="color:var(--jsu-gold); margin-bottom:1rem;"></i>
+      <div class="stagger-child card-hover-lift members-benefit-card">
+        <i class="fas fa-graduation-cap fa-3x"></i>
         <h3 data-i18n="members.career">Career Boost</h3>
         <p data-i18n="members.careerText">IEEE membership looks excellent on resumes and LinkedIn.</p>
       </div>
     </div>
   </section>
 
-  <section style="text-align:center; margin: var(--space-xl) 0;">
-    <h2 data-i18n="members.how">How to Join</h2>
-    <ol style="max-width:700px; margin: var(--space-lg) auto; text-align:left; font-size:1.15rem; line-height:2;">
-      <li>Go to <a href="https://www.ieee.org/membership/join/index.html" target="_blank" style="color:var(--jsu-gold);">ieee.org/membership</a></li>
+  <section class="members-how-section">
+    <h2 class="fade-up" data-i18n="members.how">How to Join</h2>
+    <ol class="members-steps">
+      <li>Go to <a href="https://www.ieee.org/membership/join/index.html" target="_blank">ieee.org/membership</a></li>
       <li>Select <strong>Student Membership</strong> (~$32/year)</li>
       <li>Choose <strong>Jacksonville State University</strong> as your school</li>
       <li>Join the <strong>IEEE JSU Student Branch</strong> during registration or email us afterward</li>
     </ol>
-    <a href="https://www.ieee.org/membership/join/index.html" target="_blank" class="btn btn-primary" style="font-size:1.4rem; padding:1.2rem 3rem; margin-top:2rem;" data-i18n="members.joinBtn">
+    <a href="https://www.ieee.org/membership/join/index.html" target="_blank" class="btn btn-primary members-join-btn" data-i18n="members.joinBtn">
       Join IEEE Now
     </a>
   </section>

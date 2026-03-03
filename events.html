@@ -18,7 +18,9 @@
       <span class="gamecock"><img height="45vh" src="assets/logo-nnn.png" alt=""></span>
     </a>
 
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <div class="nav-links">
       <a href="index.html" data-i18n="nav.home">Home</a>
@@ -39,7 +41,7 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="page-header-banner"></div>
-  <div class="hero-content">
+  <div class="hero-content fade-up">
     <h1 data-i18n="events.title">Events & Workshops</h1>
     <p class="subtitle" data-i18n="events.subtitle">Where ideas become reality — join us!</p>
   </div>
@@ -48,8 +50,8 @@
 <!-- Events Section -->
 <section class="ev-section">
   <div class="ev-container">
-    <span class="ev-label" data-i18n="events.label">WHAT'S HAPPENING</span>
-    <h1 class="ev-heading" data-i18n="events.title">Events</h1>
+    <span class="ev-label fade-up" data-i18n="events.label">WHAT'S HAPPENING</span>
+    <h1 class="ev-heading fade-up" data-i18n="events.title">Events</h1>
 
     <!-- Tab navigation -->
     <div class="ev-tabs">
@@ -60,10 +62,10 @@
 
     <!-- UPCOMING tab -->
     <div class="ev-tab-content active" id="tab-upcoming">
-      <div class="ev-grid">
+      <div class="ev-grid stagger-parent">
 
         <!-- Event 1 – SoutheastCon 2026 -->
-        <div class="ev-card">
+        <div class="ev-card stagger-child card-hover-lift">
           <div class="ev-card__preview">
             <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">10</span></div>
             <h3 class="ev-card__title" data-i18n="events.e1title">SoutheastCon 2026</h3>
@@ -78,7 +80,7 @@
         </div>
 
         <!-- Event 2 – PCB Design Workshop -->
-        <div class="ev-card">
+        <div class="ev-card stagger-child card-hover-lift">
           <div class="ev-card__preview">
             <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">15</span></div>
             <h3 class="ev-card__title" data-i18n="events.e2title">PCB Design Workshop</h3>
@@ -93,7 +95,7 @@
         </div>
 
         <!-- Event 3 – Arduino Robotics -->
-        <div class="ev-card">
+        <div class="ev-card stagger-child card-hover-lift">
           <div class="ev-card__preview">
             <div class="ev-date-badge"><span class="ev-month">MAY</span><span class="ev-day">03</span></div>
             <h3 class="ev-card__title" data-i18n="events.e3title">Arduino Robotics</h3>
@@ -112,9 +114,9 @@
 
     <!-- PAST tab -->
     <div class="ev-tab-content" id="tab-past">
-      <div class="ev-grid">
+      <div class="ev-grid stagger-parent">
 
-        <div class="ev-card">
+        <div class="ev-card stagger-child card-hover-lift">
           <div class="ev-card__preview">
             <div class="ev-date-badge"><span class="ev-month">MAR</span><span class="ev-day">15</span></div>
             <h3 class="ev-card__title" data-i18n="events.p1title">SoutheastCon 2025</h3>
@@ -127,7 +129,7 @@
           </div>
         </div>
 
-        <div class="ev-card">
+        <div class="ev-card stagger-child card-hover-lift">
           <div class="ev-card__preview">
             <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">12</span></div>
             <h3 class="ev-card__title" data-i18n="events.p2title">SoutheastCon 2024</h3>
@@ -148,7 +150,8 @@
       <div style="text-align:center;">
         <h3 data-i18n="calendar.live">Live Calendar</h3>
         <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FChicago"
-                style="border:0; width:100%; height:500px; border-radius:var(--radius-lg); margin-top:1rem;"
+                class="calendar-iframe"
+                style="margin-top:1rem;"
                 frameborder="0" scrolling="no"></iframe>
         <p style="margin-top:1rem; color:var(--text-muted); font-size:0.95rem;">
           <span data-i18n="calendar.public">Calendar is public — no login required</span>

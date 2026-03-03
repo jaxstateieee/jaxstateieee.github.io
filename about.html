@@ -17,7 +17,9 @@
       <span class="gamecock"><img height="45vh" src="assets/logo-nnn.png" alt=""></span>
     </a>
 
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <div class="nav-links">
       <a href="index.html" data-i18n="nav.home">Home</a>
@@ -38,13 +40,13 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="page-header-banner"></div>
-  <div class="hero-content">
+  <div class="hero-content fade-up">
     <h1 data-i18n="about.title">About Us</h1>
     <p class="subtitle" data-i18n="about.subtitle">Who we are • What we do • Why it matters</p>
   </div>
 </section>
 
-<main style="padding: var(--space-xl) var(--space-lg); max-width:1400px; margin:0 auto;">
+<main class="about-main">
 
   <!-- Leadership – flip cards example -->
 <section id="officers" class="officers">
@@ -53,15 +55,15 @@
           <span class="section-label" data-i18n="about.teamLabel">Our Team</span>
           <h2 class="section-title" data-i18n="about.officers">Officers</h2>
         </div>
-        <div class="officers__grid">
+        <div class="officers__grid stagger-parent">
 
           <!-- Officer 1 â€” President -->
           <div class="officer-card stagger-child">
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">President</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="Alex Johnson photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="Alex Johnson photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>
@@ -87,8 +89,8 @@
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">Vice President</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="Maria Rodriguez photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="Maria Rodriguez photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>
@@ -114,8 +116,8 @@
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">Secretary</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="James Chen photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="James Chen photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>
@@ -141,8 +143,8 @@
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">Treasurer</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="Sarah Williams photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="Sarah Williams photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>
@@ -168,8 +170,8 @@
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">Webmaster</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="David Kim photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="David Kim photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>
@@ -195,8 +197,8 @@
             <div class="officer-card__inner">
               <div class="officer-card__front">
                 <div class="officer-card__position-bar">Events Coordinator</div>
-                <svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-label="Emily Davis photo placeholder">
-                  <rect width="400" height="260" fill="#1A1A1A"/>
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-label="Emily Davis photo placeholder">
+                  <rect width="400" height="200" fill="#1A1A1A"/>
                   <circle cx="200" cy="110" r="50" fill="#2a2a2a"/>
                   <circle cx="200" cy="110" r="35" fill="#75182C" opacity="0.3"/>
                   <text x="200" y="115" text-anchor="middle" font-family="Inter" font-size="12" fill="#888">Photo</text>

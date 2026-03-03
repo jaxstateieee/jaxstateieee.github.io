@@ -325,20 +325,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile menu toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
+  // Mobile menu toggle (handled by hamburger morph code below)
 
   // Close mobile menu when clicking a link
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navLinks) navLinks.classList.remove('active');
+      const nl = document.querySelector('.nav-links');
+      if (nl) nl.classList.remove('active');
+      const hb = document.querySelector('.hamburger');
+      if (hb) hb.classList.remove('is-active');
     });
   });
 
@@ -427,26 +422,29 @@ if (stats.length && statsSection) {
       if (entry.isIntersecting) {
         stats.forEach(el => {
           const target = parseInt(el.getAttribute('data-target'));
-          let count = 0;
-          const increment = target / 60; // ~1 second animation
-          
-          const update = () => {
-            count += increment;
-            el.textContent = Math.floor(count);
-            if (count < target) {
+          const duration = 2000; // 2 seconds
+          const startTime = performance.now();
+
+          const update = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Quadratic ease-out: 1 - (1 - t)^2
+            const eased = 1 - Math.pow(1 - progress, 2);
+            el.textContent = Math.floor(eased * target);
+            if (progress < 1) {
               requestAnimationFrame(update);
             } else {
               el.textContent = target;
             }
           };
-          
-          update();
+
+          requestAnimationFrame(update);
         });
-        
+
         statsSection.querySelectorAll('.stat-item').forEach(item => {
           item.classList.add('visible');
         });
-        
+
         observer.disconnect();
       }
     });
@@ -509,5 +507,85 @@ if (carousel) {
   carousel.addEventListener('mouseenter', () => clearInterval(autoPlay));
   carousel.addEventListener('mouseleave', () => {
     autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  });
+}
+
+// ================================================================
+// SCROLL-REVEAL ANIMATION SYSTEM
+// ================================================================
+
+// Mark document as JS-ready so CSS hides elements before reveal
+document.documentElement.classList.add('js-ready');
+
+// --- Element-level reveal observer ---
+const revealElements = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .fade-in');
+if (revealElements.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// --- Stagger-parent observer ---
+const staggerParents = document.querySelectorAll('.stagger-parent');
+if (staggerParents.length) {
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  staggerParents.forEach(el => staggerObserver.observe(el));
+}
+
+// --- Hamburger morph toggle ---
+const hamburger = document.querySelector('.hamburger');
+const navLinksForHamburger = document.querySelector('.nav-links');
+if (hamburger && navLinksForHamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('is-active');
+    navLinksForHamburger.classList.toggle('active');
+  });
+
+  // Close on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-active');
+      navLinksForHamburger.classList.remove('active');
+    });
+  });
+}
+
+// --- Officer card flip on scroll (mobile) / touch (desktop fallback) ---
+const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+if (isMobile) {
+  const officerCards = document.querySelectorAll('.officer-card');
+  if (officerCards.length) {
+    const flipObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+          entry.target.classList.add('flipped');
+        } else {
+          entry.target.classList.remove('flipped');
+        }
+      });
+    }, { threshold: [0, 0.6] });
+    officerCards.forEach(card => flipObserver.observe(card));
+  }
+} else {
+  // Desktop: toggle on click for accessibility
+  document.querySelectorAll('.officer-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
   });
 }

@@ -20,7 +20,9 @@
       <span class="gamecock"><img height="45vh" src="assets/logo-nnn.png" alt=""></span>
     </a>
 
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <div class="nav-links">
       <a href="index.html" class="active" data-i18n="nav.home">Home</a>
@@ -56,33 +58,34 @@
     <h1 data-i18n="hero.title">IEEE<br>Jacksonville State<br>University</h1>
     <p class="subtitle" data-i18n="hero.subtitle">Gamecock Engineers – Building the future, one circuit at a time.</p>
 
-    <div style="margin-top: var(--space-lg);">
+    <div class="hero-buttons">
       <a href="members.html" class="btn btn-primary" data-i18n="hero.join">Join IEEE JSU</a>
-      <a href="events.html" class="btn btn-outline" style="margin-left: var(--space-md);" data-i18n="hero.events">Upcoming Events</a>
+      <a href="events.html" class="btn btn-outline" data-i18n="hero.events">Upcoming Events</a>
     </div>
   </div>
+  <span class="scroll-indicator"><i class="fas fa-chevron-down"></i></span>
 </section>
 
 <!-- Quick stats -->
-<section class="stats-section" style="padding: 5rem 0; background: #f8f9fa; text-align: center;">
-  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem;">
+<section class="stats-section">
+  <div class="stagger-parent stats-grid">
     
-    <div class="stat-item">
+    <div class="stat-item stagger-child">
       <div class="stat-number" data-target="128">0</div>
       <p class="stat-label" data-i18n="stats.members">Active Members</p>
     </div>
     
-    <div class="stat-item">
+    <div class="stat-item stagger-child">
       <div class="stat-number" data-target="45">0</div>
       <p class="stat-label" data-i18n="stats.events">Events Hosted</p>
     </div>
     
-    <div class="stat-item">
+    <div class="stat-item stagger-child">
       <div class="stat-number" data-target="8">0</div>
       <p class="stat-label" data-i18n="stats.officers">Officer Team</p>
     </div>
     
-    <div class="stat-item">
+    <div class="stat-item stagger-child">
       <div class="stat-number" data-target="12">0</div>
       <p class="stat-label" data-i18n="stats.projects">Projects Completed</p>
     </div>
@@ -93,7 +96,7 @@
 <!-- About IEEE JSU – maroon feature section  in the home pages -->
 <section class="about-feature">
   <div class="about-feature__inner">
-    <div class="about-feature__text">
+    <div class="about-feature__text slide-left">
       <span class="about-feature__label" data-i18n="about.whoLabel">WHO WE ARE</span>
       <h2 class="about-feature__heading" data-i18n="about.whoHeading">IEEE JSU</h2>
       <p data-i18n="about.whoPara1">
@@ -103,7 +106,7 @@
         Our branch is part of IEEE Region 3 (Southeastern US) and sends teams to SoutheastCon annually. We focus on embedded systems, robotics, PCB design, and software development &mdash; giving members practical skills that employers value.
       </p>
     </div>
-    <div class="about-feature__image">
+    <div class="about-feature__image slide-right">
       <img src="assets/jsu-computer-science-students-win-awards-at-confer_198loHt.webp" alt="IEEE JSU team photo" loading="lazy">
     </div>
   </div>
@@ -111,30 +114,30 @@
 
 <!-- Branch History Timeline -->
 <section class="timeline-section">
-  <h2 class="timeline-heading" data-i18n="timeline.title">Branch History</h2>
+  <h2 class="timeline-heading fade-up" data-i18n="timeline.title">Branch History</h2>
   <div class="timeline">
-    <div class="timeline-item">
+    <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <h3 class="timeline-year" data-i18n="timeline.y2023">2023</h3>
         <p data-i18n="timeline.d2023">Dr. Ghosh initiated the IEEE JSU Student Branch.</p>
       </div>
     </div>
-    <div class="timeline-item">
+    <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <h3 class="timeline-year" data-i18n="timeline.y2024">2024</h3>
         <p data-i18n="timeline.d2024">Won position as best starting club and Presentation Competition at SoutheastCon 2024.</p>
       </div>
     </div>
-    <div class="timeline-item">
+    <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <h3 class="timeline-year" data-i18n="timeline.y2025">2025</h3>
         <p data-i18n="timeline.d2025">Won third Position in Software Competition at SoutheastCon 2025.</p>
       </div>
     </div>
-    <div class="timeline-item">
+    <div class="timeline-item fade-up">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <h3 class="timeline-year" data-i18n="timeline.y2026">2026</h3>
@@ -146,7 +149,7 @@
 
 <!-- Image Gallery -->
 <section class="gallery-section">
-  <h2 class="gallery-title" data-i18n="gallery.title">JSU IEEE Gallery</h2>
+  <h2 class="gallery-title fade-up" data-i18n="gallery.title">JSU IEEE Gallery</h2>
   <div class="gallery-carousel">
     <div class="gallery-track">
       <div class="gallery-slide active">
@@ -172,21 +175,21 @@
 </section>
 
 <!-- Homepage Calendar -->
-<section style="margin-top: var(--space-xl); text-align:center;">
-  <h1 data-i18n="calendar.heading">Stay Up-to-Date with the upcoming events</h1>
+<section class="calendar-section">
+  <h1 class="fade-up" data-i18n="calendar.heading">Stay Up-to-Date with the upcoming events</h1>
 <h3 data-i18n="calendar.live">Live Calendar</h3>
 <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FChicago"
-        style="border:0; width:90%; height:70vh; border-radius:var(--radius-lg);"
+        class="calendar-iframe"
         frameborder="0" scrolling="no"></iframe>
-<p style="margin-top:1rem; color:var(--text-muted); font-size:0.95rem;">
+<p class="calendar-note">
     <span data-i18n="calendar.public">Calendar is public — no login required</span>
 </p>
 </section>
 
 <!-- Call to action -->
-<section style="padding: var(--space-xl) 0; text-align:center; background: #ffffff, #b6b6b6;">
-  <h2 style="font-size:3rem; margin-bottom:var(--space-md);" data-i18n="cta.heading">Ready to power up your future?</h2>
-  <a href="members.html" class="btn btn-primary" style="font-size:1.4rem; padding:1.2rem 2.8rem;" data-i18n="cta.button">Become a Member Today</a>
+<section class="cta-section">
+  <h2 class="fade-up" data-i18n="cta.heading">Ready to power up your future?</h2>
+  <a href="members.html" class="btn btn-primary cta-btn" data-i18n="cta.button">Become a Member Today</a>
 </section>
 
 <!-- Footer -->
