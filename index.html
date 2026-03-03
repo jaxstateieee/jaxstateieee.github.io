@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IEEE JSU Student Branch – Gamecock Engineers</title>
+  <meta name="description" content="IEEE Student Branch at Jacksonville State University – advancing technology through innovation, workshops, projects and professional development."/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <span class="gamecock">🐓</span> IEEE JSU
+    </a>
+
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="members.html">Join</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Announcement -->
+<div id="announcement-banner" class="announcement-banner">
+  <div class="announcement-text rotating-text" data-texts='[
+    "SoutheastCon 2026 – April 10–13, Gainesville, FL → Register now!",
+    "Weekly Tech Workshops every Thursday 6PM – Ayers Hall 201",
+    "IEEE Project Competition submissions due March 15th"
+  ]'>
+    SoutheastCon 2026 – April 10–13, Gainesville, FL → Register now!
+  </div>
+  <button class="banner-close" aria-label="Close announcement">×</button>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>IEEE<br>Jacksonville State<br>University</h1>
+    <p class="subtitle">Gamecock Engineers – Building the future, one circuit at a time.</p>
+
+    <div style="margin-top: var(--space-lg);">
+      <a href="members.html" class="btn btn-primary">Join IEEE JSU</a>
+      <a href="events.html" class="btn btn-outline" style="margin-left: var(--space-md);">Upcoming Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick stats -->
+<section class="stats-section" style="padding: 5rem 0; background: #f8f9fa; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem;">
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="128">0</div>
+      <p class="stat-label">Active Members</p>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="45">0</div>
+      <p class="stat-label">Events Hosted</p>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="8">0</div>
+      <p class="stat-label">Officer Team</p>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="12">0</div>
+      <p class="stat-label">Projects Completed</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Homepage Calendar -->
+<section style="margin-top: var(--space-xl); text-align:center;">
+  <h1>Stay Up-to-Date with the upcoming events</h1>
+<h3>Live Calendar</h3>
+<iframe src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FChicago"
+        style="border:0; width:90%; height:70vh; border-radius:var(--radius-lg);"
+        frameborder="0" scrolling="no"></iframe>
+<p style="margin-top:1rem; color:var(--text-muted); font-size:0.95rem;">
+    Calendar is public — no login required
+</p>
+</section>
+
+<!-- Call to action -->
+<section style="padding: var(--space-xl) 0; text-align:center; background: #ffffff, #b6b6b6;">
+  <h2 style="font-size:3rem; margin-bottom:var(--space-md);">Ready to power up your future?</h2>
+  <a href="members.html" class="btn btn-primary" style="font-size:1.4rem; padding:1.2rem 2.8rem;">Become a Member Today</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>IEEE JSU Student Branch</h3>
+      <p>Advancing technology for humanity — right here in Jacksonville, Alabama.</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events & Workshops</a></li>
+        <li><a href="members.html">Join IEEE</a></li>
+        <li><a href="contact.html">Contact Officers</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p><strong>Faculty Advisor:</strong> Dr. A.K. Ghosh – akghosh@jsu.edu</p>
+      <p><strong>Webmaster:</strong> pbasyal@stu.jsu.edu</p>
+      <p><strong>Last updated:</strong> March 2, 2026</p>
+    </div>
+  </div>
+
+  <div class="last-updated">
+    © 2026 IEEE Jacksonville State University Student Branch
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
