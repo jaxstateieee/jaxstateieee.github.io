@@ -33,6 +33,9 @@ const translations = {
     'cta.heading': 'Ready to power up your future?',
     'cta.button':  'Become a Member Today',
 
+    // Gallery
+    'gallery.title': 'JSU IEEE Gallery',
+
     // About
     'about.title':       'About Us',
     'about.subtitle':    'Who we are • What we do • Why it matters',
@@ -122,6 +125,9 @@ const translations = {
     // Index – CTA
     'cta.heading': '¿Listo para impulsar tu futuro?',
     'cta.button':  'Hazte Miembro Hoy',
+
+    // Gallery
+    'gallery.title': 'Galería IEEE JSU',
 
     // About
     'about.title':       'Sobre Nosotros',
@@ -359,4 +365,61 @@ if (stats.length && statsSection) {
   }, { threshold: 0.2 });
 
   observer.observe(statsSection);
+}
+
+// ─── Image Gallery Carousel ──────────────────────
+const carousel = document.querySelector('.gallery-carousel');
+if (carousel) {
+  const track = carousel.querySelector('.gallery-track');
+  const slides = carousel.querySelectorAll('.gallery-slide');
+  const dotsContainer = carousel.querySelector('.gallery-dots');
+  const prevBtn = carousel.querySelector('.gallery-prev');
+  const nextBtn = carousel.querySelector('.gallery-next');
+  let currentIndex = 0;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('gallery-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.gallery-dot');
+
+  function goToSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goToSlide(currentIndex + 1);
+      else goToSlide(currentIndex - 1);
+    }
+  }, { passive: true });
+
+  // Auto-advance every 5 seconds
+  let autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+
+  carousel.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  carousel.addEventListener('mouseleave', () => {
+    autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  });
 }

@@ -639,3 +639,114 @@ footer a:hover {
     transform: translateY(-50%);
   }
 }
+
+/* ────────────────────────────────────────────────
+   Image Gallery / Carousel
+───────────────────────────────────────────────── */
+
+.gallery-section {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.gallery-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jsu-maroon);
+  margin-bottom: var(--space-lg);
+}
+
+.gallery-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Arrows */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(117, 24, 44, 0.8);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-arrow:hover {
+  background: var(--jsu-maroon);
+}
+
+.gallery-prev { left: 1rem; }
+.gallery-next { right: 1rem; }
+
+/* Dots */
+.gallery-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.gallery-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--transition);
+  padding: 0;
+}
+
+.gallery-dot.active {
+  background: var(--jsu-gold);
+  border-color: var(--jsu-gold);
+}
+
+@media (max-width: 768px) {
+  .gallery-slide img {
+    height: 280px;
+  }
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .gallery-prev { left: 0.5rem; }
+  .gallery-next { right: 0.5rem; }
+}
