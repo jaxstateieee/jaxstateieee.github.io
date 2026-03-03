@@ -301,6 +301,199 @@ body {
 }
 
 /* ────────────────────────────────────────────────
+   Events Page – White / Red / Gold
+───────────────────────────────────────────────── */
+
+.ev-section {
+  background: #ffffff;
+  padding: var(--space-xl) var(--space-lg) var(--space-xl);
+  min-height: 60vh;
+}
+
+.ev-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ev-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--jsu-gold);
+  margin-bottom: 0.5rem;
+}
+
+.ev-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--jsu-maroon);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+/* Tabs */
+.ev-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.ev-tab {
+  background: transparent;
+  border: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.ev-tab:hover {
+  color: var(--jsu-maroon);
+}
+
+.ev-tab.active {
+  background: var(--jsu-maroon);
+  border-color: var(--jsu-maroon);
+  color: #fff;
+}
+
+/* Tab content */
+.ev-tab-content {
+  display: none;
+}
+
+.ev-tab-content.active {
+  display: block;
+}
+
+/* Cards grid */
+.ev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Individual card */
+.ev-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ev-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.ev-card__preview {
+  background: linear-gradient(135deg, var(--jsu-maroon), #9a2035);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 1.5rem;
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Date badge */
+.ev-date-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid var(--jsu-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.6rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.ev-month {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--jsu-gold);
+}
+
+.ev-day {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2px;
+}
+
+.ev-card__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  color: var(--jsu-gold);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.ev-card__location {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* Details below preview */
+.ev-card__details {
+  padding: 1.25rem 1.5rem;
+}
+
+.ev-card__details h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.ev-card__place {
+  font-size: 0.9rem;
+  color: var(--jsu-gold);
+  margin-bottom: 0.75rem;
+}
+
+.ev-card__place i {
+  margin-right: 0.35rem;
+}
+
+.ev-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.ev-btn {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .ev-grid {
+    grid-template-columns: 1fr;
+  }
+  .ev-tabs {
+    justify-content: center;
+  }
+}
+
+/* ────────────────────────────────────────────────
    Cards
 ───────────────────────────────────────────────── */
 

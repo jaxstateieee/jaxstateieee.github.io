@@ -45,91 +45,119 @@
   </div>
 </section>
 
-<main style="padding: var(--space-xl) var(--space-lg); max-width:1400px; margin:0 auto;">
+<!-- Events Section -->
+<section class="ev-section">
+  <div class="ev-container">
+    <span class="ev-label" data-i18n="events.label">WHAT'S HAPPENING</span>
+    <h1 class="ev-heading" data-i18n="events.title">Events</h1>
 
-  <section style="margin-bottom: var(--space-xl);">
-    <h2 style="text-align:center; margin-bottom:var(--space-lg);" data-i18n="events.upcoming">Upcoming Events</h2>
-    
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:var(--space-lg);">
-      
-      <!-- Example event card -->
-      <div class="card-hover" style="background:var(--surface); border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
-        <img src="assets/arup-ghosh-ieee-al-chair.jpg" alt="Workshop photo" loading="lazy" aspect-ratio="1/1" style="width:100%; height:220px; object-fit:cover;">
-        <div style="padding:var(--space-md);">
-          <h3 style="margin-bottom:0.6rem;">Embedded Systems Workshop</h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">
-            <i class="far fa-calendar-alt" style="margin-right:0.5rem;"></i>March 18–20, 2026<br>
-            <i class="fas fa-clock" style="margin-right:0.5rem;"></i>6:00 PM – 9:00 PM
-          </p>
-          <p>Hands-on session with STM32, sensors and real-time OS basics.</p>
-          <a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Register / Details</a>
-        </div>
-      </div>
-
-            <div class="card-hover" style="background:var(--surface); border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
-        <img src="assets/arup-ghosh-ieee-al-chair.jpg" alt="Workshop photo" loading="lazy" style="width:100%; height:220px; object-fit:cover;">
-        <div style="padding:var(--space-md);">
-          <h3 style="margin-bottom:0.6rem;">Embedded Systems Workshop</h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">
-            <i class="far fa-calendar-alt" style="margin-right:0.5rem;"></i>March 18–20, 2026<br>
-            <i class="fas fa-clock" style="margin-right:0.5rem;"></i>6:00 PM – 9:00 PM
-          </p>
-          <p>Hands-on session with STM32, sensors and real-time OS basics.</p>
-          <a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Register / Details</a>
-        </div>
-      </div>
-
-            <div class="card-hover" style="background:var(--surface); border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
-        <img src="assets/arup-ghosh-ieee-al-chair.jpg" alt="Workshop photo" loading="lazy" style="width:100%; height:220px; object-fit:cover;">
-        <div style="padding:var(--space-md);">
-          <h3 style="margin-bottom:0.6rem;">Embedded Systems Workshop</h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">
-            <i class="far fa-calendar-alt" style="margin-right:0.5rem;"></i>March 18–20, 2026<br>
-            <i class="fas fa-clock" style="margin-right:0.5rem;"></i>6:00 PM – 9:00 PM
-          </p>
-          <p>Hands-on session with STM32, sensors and real-time OS basics.</p>
-          <a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Register / Details</a>
-        </div>
-      </div>
-
-            <div class="card-hover" style="background:var(--surface); border-radius:var(--radius-lg); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
-        <img src="assets/arup-ghosh-ieee-al-chair.jpg" alt="Workshop photo" loading="lazy" style="width:100%; height:220px; object-fit:cover;">
-        <div style="padding:var(--space-md);">
-          <h3 style="margin-bottom:0.6rem;">Embedded Systems Workshop</h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">
-            <i class="far fa-calendar-alt" style="margin-right:0.5rem;"></i>March 18–20, 2026<br>
-            <i class="fas fa-clock" style="margin-right:0.5rem;"></i>6:00 PM – 9:00 PM
-          </p>
-          <p>Hands-on session with STM32, sensors and real-time OS basics.</p>
-          <a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Register / Details</a>
-        </div>
-      </div>
-
-      <!-- Repeat 2–4 more cards -->
-
+    <!-- Tab navigation -->
+    <div class="ev-tabs">
+      <button class="ev-tab active" data-tab="upcoming" data-i18n="events.tabUpcoming">UPCOMING</button>
+      <button class="ev-tab" data-tab="past" data-i18n="events.tabPast">PAST</button>
+      <button class="ev-tab" data-tab="calendar" data-i18n="events.tabCalendar">CALENDAR</button>
     </div>
-  </section>
 
-  <section>
-    <h2 style="text-align:center; margin-bottom:var(--space-lg);" data-i18n="events.past">Past Highlights</h2>
-    
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:var(--space-lg);">
-      <!-- Similar card structure as above, but smaller images and no register button -->
+    <!-- UPCOMING tab -->
+    <div class="ev-tab-content active" id="tab-upcoming">
+      <div class="ev-grid">
+
+        <!-- Event 1 – SoutheastCon 2026 -->
+        <div class="ev-card">
+          <div class="ev-card__preview">
+            <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">10</span></div>
+            <h3 class="ev-card__title" data-i18n="events.e1title">SoutheastCon 2026</h3>
+            <p class="ev-card__location" data-i18n="events.e1loc">Gainesville, FL</p>
+          </div>
+          <div class="ev-card__details">
+            <h3 data-i18n="events.e1name">SoutheastCon 2026</h3>
+            <p class="ev-card__place"><i class="fas fa-map-marker-alt"></i> <span data-i18n="events.e1loc">Gainesville, FL</span></p>
+            <p class="ev-card__desc" data-i18n="events.e1desc">IEEE Region 3 flagship conference &mdash; hardware competition, student paper presentations, and networking with industry leaders.</p>
+            <a href="#" class="btn btn-primary ev-btn" data-i18n="events.register">REGISTER INTEREST</a>
+          </div>
+        </div>
+
+        <!-- Event 2 – PCB Design Workshop -->
+        <div class="ev-card">
+          <div class="ev-card__preview">
+            <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">15</span></div>
+            <h3 class="ev-card__title" data-i18n="events.e2title">PCB Design Workshop</h3>
+            <p class="ev-card__location" data-i18n="events.e2loc">Ayers Hall, Room 201</p>
+          </div>
+          <div class="ev-card__details">
+            <h3 data-i18n="events.e2name">Workshop: Intro to PCB Design</h3>
+            <p class="ev-card__place"><i class="fas fa-map-marker-alt"></i> <span data-i18n="events.e2loc">Ayers Hall, Room 201</span></p>
+            <p class="ev-card__desc" data-i18n="events.e2desc">Learn the fundamentals of PCB design using industry-standard tools. Hands-on session with KiCad.</p>
+            <a href="#" class="btn btn-primary ev-btn" data-i18n="events.register">REGISTER INTEREST</a>
+          </div>
+        </div>
+
+        <!-- Event 3 – Arduino Robotics -->
+        <div class="ev-card">
+          <div class="ev-card__preview">
+            <div class="ev-date-badge"><span class="ev-month">MAY</span><span class="ev-day">03</span></div>
+            <h3 class="ev-card__title" data-i18n="events.e3title">Arduino Robotics</h3>
+            <p class="ev-card__location" data-i18n="events.e3loc">Engineering Lab B</p>
+          </div>
+          <div class="ev-card__details">
+            <h3 data-i18n="events.e3name">Arduino Robotics Challenge</h3>
+            <p class="ev-card__place"><i class="fas fa-map-marker-alt"></i> <span data-i18n="events.e3loc">Engineering Lab B</span></p>
+            <p class="ev-card__desc" data-i18n="events.e3desc">Build and program an autonomous line-following robot. Teams of 3-4, all skill levels welcome.</p>
+            <a href="#" class="btn btn-primary ev-btn" data-i18n="events.register">REGISTER INTEREST</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
 
-  <!-- Optional embedded public Google Calendar -->
-  <section style="margin-top: var(--space-xl); text-align:center;">
-    <h3 data-i18n="calendar.live">Live Calendar</h3>
-    <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FChicago"
-            style="border:0; width:100%; height:500px; border-radius:var(--radius-lg);"
-            frameborder="0" scrolling="no"></iframe>
-    <p style="margin-top:1rem; color:var(--text-muted); font-size:0.95rem;">
-      <span data-i18n="calendar.public">Calendar is public — no login required</span>
-    </p>
-  </section>
+    <!-- PAST tab -->
+    <div class="ev-tab-content" id="tab-past">
+      <div class="ev-grid">
 
-</main>
+        <div class="ev-card">
+          <div class="ev-card__preview">
+            <div class="ev-date-badge"><span class="ev-month">MAR</span><span class="ev-day">15</span></div>
+            <h3 class="ev-card__title" data-i18n="events.p1title">SoutheastCon 2025</h3>
+            <p class="ev-card__location" data-i18n="events.p1loc">Charlotte, NC</p>
+          </div>
+          <div class="ev-card__details">
+            <h3 data-i18n="events.p1name">SoutheastCon 2025</h3>
+            <p class="ev-card__place"><i class="fas fa-map-marker-alt"></i> <span data-i18n="events.p1loc">Charlotte, NC</span></p>
+            <p class="ev-card__desc" data-i18n="events.p1desc">Won third position in the Software Competition. Great experience for the team.</p>
+          </div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-card__preview">
+            <div class="ev-date-badge"><span class="ev-month">APR</span><span class="ev-day">12</span></div>
+            <h3 class="ev-card__title" data-i18n="events.p2title">SoutheastCon 2024</h3>
+            <p class="ev-card__location" data-i18n="events.p2loc">Atlanta, GA</p>
+          </div>
+          <div class="ev-card__details">
+            <h3 data-i18n="events.p2name">SoutheastCon 2024</h3>
+            <p class="ev-card__place"><i class="fas fa-map-marker-alt"></i> <span data-i18n="events.p2loc">Atlanta, GA</span></p>
+            <p class="ev-card__desc" data-i18n="events.p2desc">Won best starting club and Presentation Competition awards.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CALENDAR tab -->
+    <div class="ev-tab-content" id="tab-calendar">
+      <div style="text-align:center;">
+        <h3 data-i18n="calendar.live">Live Calendar</h3>
+        <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_PUBLIC_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FChicago"
+                style="border:0; width:100%; height:500px; border-radius:var(--radius-lg); margin-top:1rem;"
+                frameborder="0" scrolling="no"></iframe>
+        <p style="margin-top:1rem; color:var(--text-muted); font-size:0.95rem;">
+          <span data-i18n="calendar.public">Calendar is public — no login required</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- Footer (copy from index.html) -->
  <footer>

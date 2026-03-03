@@ -60,10 +60,35 @@ const translations = {
     'about.officers':    'Officers',
 
     // Events
-    'events.title':    'Events & Workshops',
+    'events.label':    "WHAT'S HAPPENING",
+    'events.title':    'Events',
     'events.subtitle': 'Where ideas become reality — join us!',
+    'events.tabUpcoming': 'UPCOMING',
+    'events.tabPast':     'PAST',
+    'events.tabCalendar': 'CALENDAR',
     'events.upcoming': 'Upcoming Events',
     'events.past':     'Past Highlights',
+    'events.register': 'REGISTER INTEREST',
+    'events.e1title':  'SoutheastCon 2026',
+    'events.e1loc':    'Gainesville, FL',
+    'events.e1name':   'SoutheastCon 2026',
+    'events.e1desc':   'IEEE Region 3 flagship conference \u2014 hardware competition, student paper presentations, and networking with industry leaders.',
+    'events.e2title':  'PCB Design Workshop',
+    'events.e2loc':    'Ayers Hall, Room 201',
+    'events.e2name':   'Workshop: Intro to PCB Design',
+    'events.e2desc':   'Learn the fundamentals of PCB design using industry-standard tools. Hands-on session with KiCad.',
+    'events.e3title':  'Arduino Robotics',
+    'events.e3loc':    'Engineering Lab B',
+    'events.e3name':   'Arduino Robotics Challenge',
+    'events.e3desc':   'Build and program an autonomous line-following robot. Teams of 3-4, all skill levels welcome.',
+    'events.p1title':  'SoutheastCon 2025',
+    'events.p1loc':    'Charlotte, NC',
+    'events.p1name':   'SoutheastCon 2025',
+    'events.p1desc':   'Won third position in the Software Competition. Great experience for the team.',
+    'events.p2title':  'SoutheastCon 2024',
+    'events.p2loc':    'Atlanta, GA',
+    'events.p2name':   'SoutheastCon 2024',
+    'events.p2desc':   'Won best starting club and Presentation Competition awards.',
 
     // Members
     'members.title':          'Join IEEE JSU',
@@ -164,10 +189,35 @@ const translations = {
     'about.officers':    'Oficiales',
 
     // Events
-    'events.title':    'Eventos y Talleres',
-    'events.subtitle': 'Donde las ideas se hacen realidad — ¡únete!',
-    'events.upcoming': 'Próximos Eventos',
+    'events.label':    'LO QUE PASA',
+    'events.title':    'Eventos',
+    'events.subtitle': 'Donde las ideas se hacen realidad — \u00a1\u00fanete!',
+    'events.tabUpcoming': 'PR\u00d3XIMOS',
+    'events.tabPast':     'PASADOS',
+    'events.tabCalendar': 'CALENDARIO',
+    'events.upcoming': 'Pr\u00f3ximos Eventos',
     'events.past':     'Eventos Pasados Destacados',
+    'events.register': 'REGISTRAR INTER\u00c9S',
+    'events.e1title':  'SoutheastCon 2026',
+    'events.e1loc':    'Gainesville, FL',
+    'events.e1name':   'SoutheastCon 2026',
+    'events.e1desc':   'Conferencia insignia de la Regi\u00f3n 3 de IEEE \u2014 competencia de hardware, presentaciones de art\u00edculos estudiantiles y networking con l\u00edderes de la industria.',
+    'events.e2title':  'Taller de Dise\u00f1o PCB',
+    'events.e2loc':    'Ayers Hall, Sala 201',
+    'events.e2name':   'Taller: Intro al Dise\u00f1o de PCB',
+    'events.e2desc':   'Aprende los fundamentos del dise\u00f1o de PCB con herramientas est\u00e1ndar de la industria. Sesi\u00f3n pr\u00e1ctica con KiCad.',
+    'events.e3title':  'Rob\u00f3tica Arduino',
+    'events.e3loc':    'Laboratorio de Ingenier\u00eda B',
+    'events.e3name':   'Desaf\u00edo de Rob\u00f3tica Arduino',
+    'events.e3desc':   'Construye y programa un robot aut\u00f3nomo seguidor de l\u00ednea. Equipos de 3-4, todos los niveles bienvenidos.',
+    'events.p1title':  'SoutheastCon 2025',
+    'events.p1loc':    'Charlotte, NC',
+    'events.p1name':   'SoutheastCon 2025',
+    'events.p1desc':   'Gan\u00f3 tercer lugar en la Competencia de Software. Gran experiencia para el equipo.',
+    'events.p2title':  'SoutheastCon 2024',
+    'events.p2loc':    'Atlanta, GA',
+    'events.p2name':   'SoutheastCon 2024',
+    'events.p2desc':   'Gan\u00f3 mejor club nuevo y premios en la Competencia de Presentaci\u00f3n.',
 
     // Members
     'members.title':          'Únete a IEEE JSU',
@@ -346,6 +396,22 @@ if (banner) {
   const savedLang = localStorage.getItem('ieeejsu-lang') || 'en';
   if (savedLang !== 'en') {
     setLanguage(savedLang);
+  }
+
+  // ─── Event Page Tabs ──────────────────────────
+  const evTabs = document.querySelectorAll('.ev-tab');
+  if (evTabs.length) {
+    evTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Deactivate all tabs & content
+        evTabs.forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.ev-tab-content').forEach(c => c.classList.remove('active'));
+        // Activate clicked tab & matching content
+        tab.classList.add('active');
+        const target = document.getElementById('tab-' + tab.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
   }
 
 });
