@@ -220,44 +220,42 @@ body {
    Page Specific Hero images
 ───────────────────────────────────────────────── */
 
-/* Page-specific hero/page-header backgrounds */
-
-/* Home (index.html) – big group/energy image */
+/* Home */
 .hero::after {
   background: url("/assets/hero-images/Home_Hero_Image.webp") center / cover no-repeat !important;
   opacity: 0.9;
   z-index: 0;
 }
 
-/* About Us – team/lab photo */
+/* About Us */
 body:has(.about-main) .page-header::after {
   background: url("/assets/Homepage_AboutUs.webp") center / cover no-repeat !important;
-  opacity: 0.9;   /* slightly lower opacity for text readability */
+  opacity: 0.9;
   z-index: 0;
 }
 
-/* Events – action/workshop shot */
+/* Events */
 body:has(.ev-section) .page-header::after {
   background: url("/assets/hero-images/Events_Hero_Image.webp") center / cover no-repeat !important;
   opacity: 0.9;
   z-index: 0;
 }
 
-/* Members/Join – students collaborating */
+/* Members/Join */
 body:has(.members-main) .page-header::after {
   background: url("/assets/hero-images/JoinP_Hero_Image.webp") center / cover no-repeat !important;
   opacity: 0.9;
   z-index: 0;
 }
 
-/* Contact – calm campus/engineering building */
+/* Contact */
 body:has(.contact-main) .page-header::after {
-  background: url("/assets/contact-campus-building.webp") center / cover no-repeat !important;
-  opacity: 0.35;
+  background: url("/assets/hero-images/Contact_Hero_image.webp") center / cover no-repeat !important;
+  opacity: 0.9;
   z-index: 0;
 }
 
-/* Fallback if body class missing (very safe) */
+/* Fallback if body class missing */
 .page-header::after:not(:has(body:has(.hero))) {
   background: none !important;
   opacity: 0 !important;
