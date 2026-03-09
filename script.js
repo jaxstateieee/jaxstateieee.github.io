@@ -663,4 +663,27 @@ document.addEventListener('DOMContentLoaded', () => {
       video.currentTime = 0;       
     });
   }
+
+  // ─── Live Date and Time Display ──────────────────────
+  function updateDateTime() {
+    const datetimeEl = document.getElementById('current-datetime');
+    if (datetimeEl) {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZoneName: 'short'
+      };
+      datetimeEl.textContent = now.toLocaleDateString('en-US', options);
+    }
+  }
+  
+  // Update immediately and then every second
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
 });
