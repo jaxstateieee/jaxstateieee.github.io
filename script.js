@@ -523,15 +523,33 @@ if (carousel) {
     dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
   }
 
-  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+  // Auto-advance every 5 seconds
+  let autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  
+  function restartAutoPlay() {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+    restartAutoPlay();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+    restartAutoPlay();
+  });
 
   // Touch swipe support
   let touchStartX = 0;
   let touchEndX = 0;
+  let isTouching = false;
 
   track.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
+    isTouching = true;
+    clearInterval(autoPlay);
   }, { passive: true });
 
   track.addEventListener('touchend', (e) => {
@@ -541,14 +559,16 @@ if (carousel) {
       if (diff > 0) goToSlide(currentIndex + 1);
       else goToSlide(currentIndex - 1);
     }
+    isTouching = false;
+    restartAutoPlay();
   }, { passive: true });
 
-  // Auto-advance every 5 seconds
-  let autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
-
+  // Pause on mouse hover (desktop)
   carousel.addEventListener('mouseenter', () => clearInterval(autoPlay));
   carousel.addEventListener('mouseleave', () => {
-    autoPlay = setInterval(() => goToSlide(currentIndex + 1), 5000);
+    if (!isTouching) {
+      restartAutoPlay();
+    }
   });
 }
 
